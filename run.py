@@ -28,6 +28,12 @@ if __name__ == "__main__":
     
     print(f"[*] VisionTrust AI initializing on 0.0.0.0:{port}...", flush=True)
     try:
+        # Pre-create database schema before any module initializes
+        from app.core.database import engine, Base
+        import app.models.orm_models
+        Base.metadata.create_all(bind=engine)
+        print("[*] Database schema verified and initialized successfully.", flush=True)
+
         # Pre-verify imports
         import app.main
         print("[*] FastAPI application and routers imported successfully.", flush=True)

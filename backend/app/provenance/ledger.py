@@ -5,7 +5,7 @@ import json
 import secrets
 from typing import Optional, List, Dict, Any, Tuple
 from sqlalchemy.orm import Session
-from app.core.database import SessionLocal
+from app.core.database import SessionLocal, engine, Base
 from app.models.orm_models import AuditLog
 from app.core.hashing import hash_bytes, hash_json
 
@@ -146,6 +146,10 @@ class SQLiteLedgerBackend(LedgerBackend):
     """
     def __init__(self, db_factory=SessionLocal):
         self.db_factory = db_factory
+        try:
+            Base.metadata.create_all(bind=engine)
+        except Exception:
+            pass
         self._ensure_genesis_block()
 
     def _ensure_genesis_block(self):
