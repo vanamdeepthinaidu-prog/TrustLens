@@ -1,0 +1,13 @@
+{
+  "inference_id": "INF-2026-00912",
+  "input_hash": "a1b2c3d4e5f67890123456789abcdef0123456789abcdef0123456789abcdef0",
+  "model_id": "RESNET-18-PROD",
+  "model_hash": "b2c3d4e5f67890123456789abcdef0123456789abcdef0123456789abcdef01",
+  "prediction": "threat",
+  "confidence": 0.41,
+  "timestamp": "2026-09-10T12:00:00Z",
+  "sequence_number": 1042,
+  "nonce": "NONCE-98124",
+  "operator_id": "sys_inference_node",
+  "record_hash": "9def58ca1b0d770eadc80a4721b8a274d12e354be7c2f7fcd4287b6dec9023d8"
+}

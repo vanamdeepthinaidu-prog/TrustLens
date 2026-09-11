@@ -1,0 +1,11 @@
+{
+  "asset_id": "FRAME-2026-0881",
+  "acquisition_time": "2029-01-01T00:00:00Z",
+  "sensor_id": "CAMERA-NORTH-04",
+  "contributor_id": "CONTRIB-005",
+  "gps_coordinates": {
+    "lat": 0.0,
+    "lon": 0.0
+  },
+  "status": "RAW_INGRESS"
+}

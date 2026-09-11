@@ -1,0 +1,8 @@
+{
+  "inference_id": "INF-2026-00445",
+  "sequence_number": 850,
+  "nonce": "NONCE-ALPHA-445",
+  "timestamp": "2026-09-01T08:30:00Z",
+  "decision": "AUTHORIZED_ACCESS",
+  "replayed_at": "2026-09-10T08:42:12.616801+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "sample_000.jpg": "vehicle",
+  "sample_001.jpg": "vehicle",
+  "sample_002.jpg": "vehicle",
+  "sample_003.jpg": "pedestrian",
+  "sample_004.jpg": "pedestrian",
+  "sample_005.jpg": "vehicle",
+  "sample_006.jpg": "pedestrian",
+  "sample_007.jpg": "pedestrian",
+  "sample_008.jpg": "vehicle",
+  "sample_009.jpg": "vehicle",
+  "sample_010.jpg": "pedestrian",
+  "sample_011.jpg": "vehicle",
+  "sample_012.jpg": "pedestrian",
+  "sample_013.jpg": "vehicle",
+  "sample_014.jpg": "pedestrian",
+  "sample_015.jpg": "vehicle",
+  "sample_016.jpg": "vehicle",
+  "sample_017.jpg": "vehicle",
+  "sample_018.jpg": "pedestrian",
+  "sample_019.jpg": "vehicle"
+}
