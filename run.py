@@ -16,6 +16,9 @@ for p in (str(ROOT_DIR), str(BACKEND_DIR)):
     if p not in sys.path:
         sys.path.insert(0, p)
 
+# Prevent Uvicorn multi-process warning from Render's WEB_CONCURRENCY
+os.environ.pop("WEB_CONCURRENCY", None)
+
 if __name__ == "__main__":
     port_str = os.environ.get("PORT", "8000")
     try:
@@ -25,11 +28,20 @@ if __name__ == "__main__":
     
     print(f"[*] VisionTrust AI initializing on 0.0.0.0:{port}...", flush=True)
     try:
-        from app.main import app
+        # Pre-verify imports
+        import app.main
+        print("[*] FastAPI application and routers imported successfully.", flush=True)
         import uvicorn
-        print("[*] FastAPI app loaded successfully. Starting Uvicorn...", flush=True)
-        uvicorn.run(app, host="0.0.0.0", port=port)
-    except Exception as e:
-        print(f"[!] FATAL STARTUP ERROR: {e}", file=sys.stderr, flush=True)
+        print(f"[*] Starting Uvicorn on 0.0.0.0:{port}...", flush=True)
+        uvicorn.run(
+            "app.main:app",
+            host="0.0.0.0",
+            port=port,
+            app_dir=str(BACKEND_DIR),
+            log_level="info",
+            workers=1
+        )
+    except BaseException as e:
+        print(f"[!] FATAL STARTUP ERROR: {type(e).__name__}: {e}", flush=True)
         traceback.print_exc()
         sys.exit(1)
